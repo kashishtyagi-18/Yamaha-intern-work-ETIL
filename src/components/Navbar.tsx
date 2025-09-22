@@ -220,6 +220,35 @@ const Navbar = () => {
               </ul>
             )}
           </div>
+
+          {/* News & Blog mobile */}
+          <div>
+            <button
+              onClick={() =>
+                setActiveDropdown(activeDropdown === "news" ? null : "news")
+              }
+              className="flex items-center gap-2"
+            >
+              News & Blog{" "}
+              {activeDropdown === "news" ? <ChevronUp /> : <ChevronDown />}
+            </button>
+            {activeDropdown === "news" && (
+              <ul className="pl-4 mt-2 space-y-2 text-gray-700">
+                <li>
+                  <Link to="/news">News</Link>
+                </li>
+                <li>
+                  <Link to="/blog">Blog</Link>
+                </li>
+                <li>
+                  <Link to="/sr-talk">SR Talk</Link>
+                </li>
+                <li>
+                  <Link to="/newsletter">Newsletter</Link>
+                </li>
+              </ul>
+            )}
+          </div>
         </div>
       )}
     </nav>
